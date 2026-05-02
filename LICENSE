@@ -1,0 +1,66 @@
+TLİ (TÜRK LİSANS İMZASI) - Versiyon 1.0
+TELİF HAKKI NOTU Copyright (c) 2026 tda_45. Tüm Hakları Saklıdır.
+
+1. TANIMLAR VE KAPSAM Bu lisans, beraberinde sunulan yazılımın, kaynak kodlarının ve dokümantasyonun kullanım şartlarını belirler. Bu yazılımı kullanan, kopyalayan veya üzerinde değişiklik yapan her kişi bu şartları kabul etmiş sayılır.
+
+2. KULLANIM VE KAYNAK KODU ÖZGÜRLÜĞÜ
+
+Açık/Kapalı Kaynak: Kullanıcı, bu projenin kaynak kodlarını isteğe bağlı olarak açık tutabilir veya kapalı kaynağa dönüştürebilir.
+
+Modifikasyon: Yazılım üzerinde geliştirme yapılması, parçalarının başka projelere dahil edilmesi serbesttir.
+
+3. TİCARİ YASAKLAR VE ÜCRETSİZLİK (KRİTİK MADDE)
+
+Satış Yasağı: Bu yazılım (exe hali veya kaynak kodu), hiçbir platformda ücret karşılığında satılamaz, kiralanamaz veya ticari bir paketin parçası olarak pazarlanamaz.
+
+Uygulama İçi Satın Alım (IAP): Yazılımın içinde veya bu yazılımdan türetilmiş versiyonlarda hiçbir şekilde "ek özellik kilidi açma", "bağış zorunluluğu" veya "uygulama içi satın alım" modeli uygulanamaz. Bu yazılım her zaman %100 ücretsiz kalmak zorundadır.
+
+4. ATIF VE DAĞITIM
+
+Yazılımın orijinal veya değiştirilmiş sürümleri dağıtılırken, orijinal yazarın ismi ve bu TLİ metni korunmak zorundadır. "Ben yaptım" şeklinde asılsız beyanlarda bulunulamaz.
+
+5. GARANTİ VE SORUMLULUK REDDİ BU YAZILIM, YAZAR TARAFINDAN "OLDUĞU GİBİ" SUNULMUŞTUR. YAZILIMIN KULLANIMINDAN DOĞABİLECEK VERİ KAYBI, AĞ KESİNTİSİ VEYA DONANIMSAL ARIZALAR DAHİL OLMAK ÜZERE HİÇBİR DOĞRUDAN VEYA DOLAYLI ZARARDAN YAZAR SORUMLU TUTULAMAZ. TÜM RİSK KULLANICIYA AİTTİR.
+
+6. HÜKÜM DEĞİŞİKLİĞİ VE LİSANSIN SÜREKLİLİĞİ
+
+Lisansın Üstünlüğü: Bu yazılımdan türetilen veya bu yazılımı içeren herhangi bir çalışma, TLİ'nin 3. maddesinde belirtilen "Ücretsizlik ve Satış Yasağı" hükmünü hiçbir koşulda geçersiz kılamaz.
+
+Hakların Saklı Tutulması: Yazılımın orijinal geliştiricisi, TLİ şartlarının ihlal edildiği durumlarda yazılımın dağıtım ve kullanım haklarını bireysel veya toplu olarak durdurma hakkını saklı tutar.
+
+Gelecek Versiyonlar: Orijinal yazar, yazılımın gelecekteki sürümlerini farklı bir lisansla sunabilir; ancak halihazırda TLİ ile dağıtılmış sürümler sonsuza kadar TLİ hükümlerine tabi kalmaya devam eder.
+
+7. KÖTÜYE KULLANIM VE ETİK YÜKÜMLÜLÜK
+
+Zararlı Yazılım Yasağı: Bu yazılımın kaynak kodları; virüs, trojan, spyware (casus yazılım) veya kullanıcı verilerini izinsiz çalan herhangi bir "malware" bileşeni eklenerek yeniden dağıtılamaz.
+
+Şeffaflık İlkesi: Eğer yazılım modifiye edilirse, son kullanıcıya yapılan değişikliklerin ne olduğu ve bu yazılımın "Orijinal TLİ" ile korunan bir kopyadan türetildiği açıkça beyan edilmelidir.
+
+Dürüst Dağıtım: Bu yazılımın ismi ve logosu, kullanıcıyı yanıltmak veya "resmi bir devlet/kurum yazılımı" izlenimi vermek amacıyla kullanılamaz.
+
+8. DESTEK VE GÜNCELLEME TAAHHÜDÜ
+
+Gönüllülük Esası: Yazılım, "olduğu gibi" sunulmuş olup yazarın gelecekte teknik destek verme, hata düzeltme veya yeni özellik ekleme zorunluluğu yoktur.
+
+Topluluk Katkısı: Kullanıcılar tarafından bildirilen hatalar yazarın takdirine bağlı olarak düzeltilir; ancak hiçbir kullanıcı "ücret ödemediği bir hizmet için" öncelikli destek talep edemez.
+
+9. TERSİNE MÜHENDİSLİK VE GÜVENLİK
+
+İnceleme Özgürlüğü: Yazılımın nasıl çalıştığını anlamak adına tersine mühendislik yapılması veya güvenlik açıklarının taranması serbesttir.
+
+İyi Niyetli Bildirim: Tespit edilen güvenlik açıkları, kötü niyetli kişilerle paylaşılmadan önce projenin güvenliğini sağlamak adına ilk olarak orijinal yazara (etik çerçevede) bildirilmelidir.
+
+10. YETKİLİ MERCİİ VE ANLAŞMAZLIK
+
+Yorum Hakkı: Bu lisans maddeleri arasında yaşanabilecek anlam kaymaları veya yorum farklarında, orijinal yazarın beyanı ve projenin başlangıçtaki "Tamamen Ücretsiz ve Bağımsız Olma" vizyonu esas alınır.
+
+Fesih: Bu lisansın herhangi bir maddesinin (özellikle 3. ve 7. maddeler) ihlali durumunda, ilgili kişinin yazılımı kullanma ve dağıtma lisansı otomatik olarak iptal olur. 
+
+11. YEREL HÜKÜMLER VE DİL BÜTÜNLÜĞÜ
+
+Geçerli Dil: Bu lisansın orijinal dili Türkçe'dir. Başka dillere yapılan çeviriler sadece anlamayı kolaylaştırmak içindir; bir anlaşmazlık durumunda orijinal Türkçe metin (TLİ v1.0) esas alınır.
+
+Bölünemezlik: Bu lisansın herhangi bir maddesinin yerel yasalarca geçersiz sayılması durumunda, sadece o madde geçersiz kalır; lisansın diğer tüm maddeleri (özellikle ticari yasak ve sorumluluk reddi) tam yetkiyle yürürlükte kalmaya devam eder.
+
+Kapanış: Bu yazılım, özgür internet ve bilgi paylaşımı vizyonuyla, hiçbir maddi karşılık beklenmeden topluma sunulmuştur.
+
+Writed by tda_45...
