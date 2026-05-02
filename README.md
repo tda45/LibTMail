@@ -488,6 +488,6 @@ Bu script'in geliştirilmesine katkı sağlayan tüm topluluk üyelerine teşekk
 
 **⚡ Hızlı Kurulum:** `git clone https://github.com/tda45/LibTMail.git && cd LibTMail && chmod +x config.sh && sudo ./config.sh`
 
-**📧 E-posta:** tda_45@example.com  
+**📧 E-posta:** tahadikbas45@gmail.com
 **🌐 Web:** https://github.com/tda45/LibTMail  
 **📜 Lisans:** TLİ v1.0
