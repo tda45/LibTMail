@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  libtmail:
+    build: .
+    container_name: libtmail
+    hostname: mail
+    restart: unless-stopped
+    ports:
+      - "25:25"     # SMTP
+      - "587:587"   # SMTP Submission
+      - "143:143"   # IMAP
+      - "993:993"   # IMAPS
+      - "110:110"   # POP3
+      - "995:995"   # POP3S
+      - "80:80"     # HTTP
+      - "443:443"   # HTTPS
+    environment:
+      - MAIL_DOMAIN=${MAIL_DOMAIN:-example.com}
+      - MAIL_HOSTNAME=${MAIL_HOSTNAME:-mail}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@example.com}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-changeme}
+      - MYSQL_MAIL_PASSWORD=${MYSQL_MAIL_PASSWORD:-changeme}
+      - TZ=${TZ:-UTC}
+    volumes:
+      - mail_data:/var/vmail
+      - mail_logs:/var/log/mail
+      - mysql_data:/var/lib/mysql
+      - ssl_certs:/etc/ssl/certs
+      - ssl_keys:/etc/ssl/private
+      - mail_backups:/var/backups/mailserver
+      - mail_config:/etc/postfix
+      - dovecot_config:/etc/dovecot
+      - opendkim_config:/etc/opendkim
+      - spamassassin_config:/etc/spamassassin
+      - clamav_config:/etc/clamav
+      - webmail_data:/var/www/html/webmail
+      - supervisor_logs:/var/log/supervisor
+    networks:
+      - mailnet
+    healthcheck:
+      test: ["CMD", "netstat", "-tlnp", "|", "grep", "-E", ":(25|587|143|993|110|995|80|443)\\s"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: phpMyAdmin for database management
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: libtmail-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=libtmail
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD:-changeme}
+    networks:
+      - mailnet
+    depends_on:
+      - libtmail
+    profiles:
+      - admin
+
+  # Optional: MailHog for development/testing
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: libtmail-mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    networks:
+      - mailnet
+    profiles:
+      - dev
+
+volumes:
+  mail_data:
+    driver: local
+  mail_logs:
+    driver: local
+  mysql_data:
+    driver: local
+  ssl_certs:
+    driver: local
+  ssl_keys:
+    driver: local
+  mail_backups:
+    driver: local
+  mail_config:
+    driver: local
+  dovecot_config:
+    driver: local
+  opendkim_config:
+    driver: local
+  spamassassin_config:
+    driver: local
+  clamav_config:
+    driver: local
+  webmail_data:
+    driver: local
+  supervisor_logs:
+    driver: local
+
+networks:
+  mailnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

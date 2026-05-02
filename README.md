@@ -1,20 +1,22 @@
-# LibTMail - Linux Mail Sunucu Yapılandırma Script'i
+# LibTMail - Mail Sunucu Yapılandırma Script'i
 
 ![License](https://img.shields.io/badge/License-TL%C4%B0%20v1.0-blue.svg)
-![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg)
-![Version](https://img.shields.io/badge/Version-1.0-green.svg)
+![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20Docker-lightgrey.svg)
+![Version](https://img.shields.io/badge/Version-2.0-green.svg)
 
-LibTMail, Linux sistemler için tam özellikli bir mail sunucusu kurulumunu otomatikleştiren kapsamlı bir shell script'idir. Postfix, Dovecot, MariaDB ve daha birçok bileşeni tek komutla kurup yapılandırır.
+LibTMail, Linux, Windows ve Docker için tam özellikli bir mail sunucusu kurulumunu otomatikleştiren kapsamlı bir script set'idir. Postfix, Dovecot, MariaDB, SpamAssassin, ClamAV, OpenDKIM ve Roundcube gibi bileşenleri tek komutla kurup yapılandırır.
 
 ## 📋 İçerik
 
 - [Özellikler](#-özellikler)
-- [Sistem Gereksinimleri](#-sistem-gereksinimleri)
-- [Desteklenen Dağıtımlar](#-desteklenen-dağıtımlar)
-- [Kurulum](#-kurulum)
-- [Kullanım](#-kullanım)
-- [Yapılandırma](#-yapılandırma)
+- [Desteklenen Platformlar](#-desteklenen-platformlar)
+- [Kurulum Yöntemleri](#-kurulum-yöntemleri)
+  - [Linux Kurulumu](#-linux-kurulumu)
+  - [Windows Kurulumu](#-windows-kurulumu)
+  - [Docker Kurulumu](#-docker-kurulumu)
+- [Hızlı Kurulum](#-hızlı-kurulum)
 - [Yönetim Araçları](#-yönetim-araçları)
+- [Test ve Doğrulama](#-test-ve-doğrulama)
 - [Güvenlik Özellikleri](#-güvenlik-özellikleri)
 - [Webmail Arayüzü](#-webmail-arayüzü)
 - [DNS Yapılandırması](#-dns-yapılandırması)
@@ -24,79 +26,137 @@ LibTMail, Linux sistemler için tam özellikli bir mail sunucusu kurulumunu otom
 ## 🚀 Özellikler
 
 ### 📧 Mail Sunucu Bileşenleri
-- **Postfix** - SMTP sunucusu
-- **Dovecot** - IMAP/POP3 sunucusu
-- **MariaDB** - Veritabanı yönetimi
+- **Postfix** - SMTP sunucusu (Linux) / **hMailServer** (Windows)
+- **Dovecot** - IMAP/POP3 sunucusu (Linux) / **hMailServer** (Windows)
+- **MariaDB/MySQL** - Veritabanı yönetimi
 - **OpenDKIM** - DKIM imzalama
 - **SpamAssassin** - Spam filtreleme
 - **ClamAV** - Virüs tarama
+- **Roundcube** - Webmail arayüzü
 
-### 🛡️ Güvenlik
+### � Platform Desteği
+- **Linux** - Ubuntu/Debian/CentOS/RHEL/Fedora
+- **Windows** - 7/8.1/10/11
+- **Docker** - Konteyner deployment
+- **Cross-platform** yönetim araçları
+
+### �️ Güvenlik
 - SSL/TLS şifreleme
 - Spam filtreleme
 - Virüs tarama
 - DKIM imzalama
 - Güvenlik duvarı yapılandırması
+- Otomatik güvenlik güncellemeleri
 
 ### 🌐 Web Arayüzü
 - **Roundcube** webmail
 - Modern ve kullanıcı dostu arayüz
 - Mobil uyumlu tasarım
+- Çoklu dil desteği
 
 ### 🔧 Yönetim Araçları
-- `mailadmin` - Kullanıcı yönetimi
-- `mailbackup` - Otomatik yedekleme
-- `mailmonitor` - Servis izleme
-- `mailqueue` - Posta kuyruğu yönetimi
+- `mailadmin/mailadmin.bat` - Kullanıcı yönetimi
+- `mailbackup/mailbackup.bat` - Otomatik yedekleme
+- `mailmonitor/mailmonitor.bat` - Servis izleme
+- `mailqueue/mailqueue.bat` - Posta kuyruğu yönetimi
 
-## 💻 Sistem Gereksinimleri
+### 🧪 Test ve Doğrulama
+- `test.sh/test.bat` - Otomatik test script'leri
+- `validate.sh/validate.bat` - Konfigürasyon doğrulama
+- Detaylı raporlama ve loglama
+- Hata tespiti ve öneriler
 
-- **İşletim Sistemi:** Linux (Ubuntu/Debian/CentOS/RHEL/Fedora)
-- **RAM:** Minimum 2GB, tavsiye edilen 4GB+
-- **Disk Alanı:** Minimum 20GB boş alan
-- **Ağ:** Statik IP adresi
-- **Root Erişimi:** Administrator yetkileri
+### 🚀 Hızlı Kurulum
+- `install.sh/install.bat` - Tek komutla kurulum
+- Otomatik bağımlılık yönetimi
+- İnteraktif ve hızlı kurulum seçenekleri
 
-## 🐧 Desteklenen Dağıtımlar
+## �️ Desteklenen Platformlar
 
-- **Ubuntu** 18.04, 20.04, 22.04+
-- **Debian** 9, 10, 11+
-- **CentOS** 7, 8, 9
-- **RHEL** 7, 8, 9
-- **Fedora** 35, 36, 37+
+### Linux
+- **Dağıtımlar:** Ubuntu 18.04+, Debian 9+, CentOS 7+, RHEL 7+, Fedora 35+
+- **Gereksinimler:** Root erişimi, 2GB+ RAM, 20GB+ disk
 
-## 📦 Kurulum
+### Windows
+- **Sürümler:** Windows 7, 8.1, 10, 11
+- **Gereksinimler:** Administrator yetkisi, 2GB+ RAM, 20GB+ disk
 
-### 1. Script'i İndirin
+### Docker
+- **Platformlar:** Linux, Windows, macOS (Docker Desktop)
+- **Gereksinimler:** Docker ve Docker Compose
+
+## 📦 Kurulum Yöntemleri
+
+### 🔥 Hızlı Kurulum (Tüm Platformlar)
+
+#### Linux
+```bash
+curl -fsSL https://raw.githubusercontent.com/tda45/LibTMail/master/install.sh | sudo bash
+```
+
+#### Windows
+```cmd
+powershell -Command "iwr -Uri https://raw.githubusercontent.com/tda45/LibTMail/master/install.bat -OutFile install.bat; ./install.bat"
+```
+
+### � Manuel Kurulum
+
+#### 1. Repository'yi klonlayın
 ```bash
 git clone https://github.com/tda45/LibTMail.git
 cd LibTMail
 ```
 
-### 2. Script'i Çalıştırın
+#### 2. Platformunuza göre kurulumu çalıştırın
+
+**Linux:**
 ```bash
-chmod +x config.sh
-sudo ./config.sh
+chmod +x install.sh
+sudo ./install.sh
 ```
 
-### 3. Kurulum Parametreleri
-Script size aşağıdaki bilgileri soracaktır:
-- **Domain Adı:** example.com
-- **Hostname:** mail (varsayılan)
-- **Admin E-posta:** admin@example.com
-
-## 🎯 Kullanım
-
-### Kurulum Sonrası
-Kurulum tamamlandığında script size aşağıdaki bilgileri verecektir:
-- Admin kullanıcı şifresi
-- MySQL veritabanı şifreleri
-- DKIM DNS kayıtları
-- Servis durumları
-
-### Webmail Erişimi
+**Windows:**
+```cmd
+install.bat
 ```
-http://mail.domain.com/webmail
+
+**Docker:**
+```bash
+chmod +x docker.sh
+./docker.sh start
+```
+
+## 🐳 Docker Kurulumu
+
+### Hızlı Başlatma
+```bash
+# Environment dosyası oluştur
+./docker.sh env
+
+# Konteynerleri başlat
+./docker.sh start
+```
+
+### Docker Yönetimi
+```bash
+./docker.sh status          # Durum göster
+./docker.sh logs             # Logları göster
+./docker.sh backup           # Yedekle
+./docker.sh exec mailadmin list  # Komut çalıştır
+./docker.sh stop             # Durdur
+./docker.sh update           # Güncelle
+```
+
+### Docker Compose
+```bash
+# Manuel başlatma
+docker-compose up -d
+
+# Logları görüntüle
+docker-compose logs -f
+
+# Konteyner durumu
+docker-compose ps
 ```
 
 ## ⚙️ Yapılandırma
@@ -125,52 +185,58 @@ http://mail.domain.com/webmail
 
 ## 🔧 Yönetim Araçları
 
-### mailadmin - Kullanıcı Yönetimi
+### mailadmin/mailadmin.bat - Kullanıcı Yönetimi
 ```bash
-# Kullanıcı ekle
+# Linux
 mailadmin add kullanici@domain.com sifre123
-
-# Kullanıcıları listele
 mailadmin list
-
-# Şifre değiştir
 mailadmin password kullanici@domain.com yenisifre
-
-# Kullanıcı sil
 mailadmin delete kullanici@domain.com
+
+# Windows
+mailadmin.bat add kullanici@domain.com sifre123
+mailadmin.bat list
+mailadmin.bat password kullanici@domain.com yenisifre
+mailadmin.bat delete kullanici@domain.com
 ```
 
-### mailbackup - Yedekleme
+### mailbackup/mailbackup.bat - Yedekleme
 ```bash
-# Manuel yedekleme
+# Linux
 mailbackup
 
-# Otomatik yedekleme (her gün 02:00)
-# Cron job otomatik olarak ayarlanır
+# Windows
+mailbackup.bat
+
+# Docker
+./docker.sh exec mailbackup
 ```
 
-### mailmonitor - İzleme
+### mailmonitor/mailmonitor.bat - İzleme
 ```bash
-# Servis durumunu kontrol et
+# Linux
 mailmonitor
+
+# Windows
+mailmonitor.bat
 
 # İzleme logları
 tail -f /var/log/mailserver_monitor.log
 ```
 
-### mailqueue - Posta Kuyruğu
+### mailqueue/mailqueue.bat - Posta Kuyruğu
 ```bash
-# Kuyruğu göster
+# Linux
 mailqueue show
-
-# Kuyruğu temizle
 mailqueue flush
-
-# Bekleyen mesajları sil
 mailqueue deferred
-
-# İstatistikler
 mailqueue stats
+
+# Windows
+mailqueue.bat show
+mailqueue.bat flush
+mailqueue.bat deferred
+mailqueue.bat stats
 ```
 
 ## 🛡️ Güvenlik Özellikleri
@@ -196,6 +262,47 @@ mailqueue stats
 - Güvenli bağlantı zorunluluğu
 - Şifreli iletişim
 
+## 🧪 Test ve Doğrulama
+
+### Otomatik Test
+```bash
+# Linux
+./test.sh
+
+# Windows
+test.bat
+
+# Docker
+./docker.sh exec test.sh
+```
+
+### Konfigürasyon Doğrulama
+```bash
+# Linux
+./validate.sh
+
+# Windows
+validate.bat
+
+# Docker
+./docker.sh exec validate.sh
+```
+
+### Test Seçenekleri
+```bash
+# Hızlı test
+./test.sh --quick
+
+# Sadece servisleri test et
+./test.sh --services
+
+# Sadece bağlantıyı test et
+./test.sh --network
+
+# Detaylı rapor
+./test.sh -v
+```
+
 ## 🌐 Webmail Arayüzü
 
 ### Roundcube Özellikleri
@@ -206,9 +313,13 @@ mailqueue stats
 - Takvim desteği
 - Dosya eki yönetimi
 
+### Erişim Adresleri
+- **Linux/Windows:** `http://mail.domain.com/webmail`
+- **Docker:** `http://localhost:80` veya `http://localhost:443`
+
 ### Kurulum
 Webmail kurulumu için:
-1. `http://mail.domain.com/webmail/installer` adresine gidin
+1. Webmail adresine gidin
 2. Veritabanı bilgilerini girin
 3. Kurulumu tamamlayın
 4. Installer klasörünü silin
@@ -236,74 +347,131 @@ _dmarc IN    TXT   "v=DMARC1; p=quarantine; rua=mailto:dmarc@domain.com"
 ### DKIM Anahtarı
 Script kurulumu sırasında DKIM anahtarınızı oluşturur. DNS kaydı için:
 ```bash
+# Linux
 cat /etc/opendkim/keys/domain.com/mail.txt
+
+# Docker
+./docker.sh exec cat /etc/opendkim/keys/domain.com/mail.txt
 ```
 
 ## 🔧 Sorun Giderme
 
+### Otomatik Doğrulama
+```bash
+# Konfigürasyon doğrulama
+./validate.sh          # Linux
+validate.bat           # Windows
+
+# Test çalıştırma
+./test.sh              # Linux
+test.bat               # Windows
+```
+
 ### Servis Durumu Kontrolü
 ```bash
-# Tüm servislerin durumu
+# Linux
 systemctl status postfix dovecot mariadb spamassassin clamav-daemon opendkim apache2
 
-# Port durumu
+# Windows
+sc query hmailserver
+sc query mysql
+
+# Docker
+./docker.sh status
+docker-compose ps
+```
+
+### Port Durumu
+```bash
+# Linux/Windows
 netstat -tlnp | grep -E ':(25|587|143|993|110|995|80|443)\s'
+
+# Docker
+./docker.sh exec netstat -tlnp | grep -E ':(25|587|143|993|110|995|80|443)\s'
 ```
 
 ### Log Dosyaları
 ```bash
-# Postfix logları
+# Linux
 tail -f /var/log/mail.log
-
-# Dovecot logları
 tail -f /var/log/dovecot.log
-
-# SpamAssassin logları
 tail -f /var/log/spamassassin/spamd.log
-
-# ClamAV logları
 tail -f /var/log/clamav/clamd.log
-
-# Apache logları
 tail -f /var/log/apache2/error.log
+
+# Windows
+Get-Content -Wait C:\ProgramData\hMailServer\Logs\hMailServer.log
+Get-Content -Wait C:\ProgramData\MySQL\MySQL Server 8.0\Data\*.err
+
+# Docker
+./docker.sh logs libtmail
+docker-compose logs -f
 ```
 
 ### Yaygın Sorunlar
 
 #### Postfix Başlamıyor
 ```bash
-# Yapılandırma kontrolü
+# Linux
 postfix check
-
-# Hataları göster
 journalctl -u postfix
+
+# Docker
+./docker.sh exec postfix check
 ```
 
 #### Dovecot Bağlantı Hatası
 ```bash
-# Yapılandırma kontrolü
+# Linux
 doveconf -n
-
-# Servis yeniden başlat
 systemctl restart dovecot
+
+# Docker
+./docker.sh exec doveconf -n
+./docker.sh restart
 ```
 
 #### Webmail Erişim Sorunu
 ```bash
-# Apache durumunu kontrol et
+# Linux
 systemctl status apache2
-
-# Apache yapılandırmasını kontrol et
 apache2ctl configtest
+
+# Windows
+sc query W3SVC
+
+# Docker
+curl -I http://localhost:80
 ```
 
-### Veritabanı Sorunları
+#### Veritabanı Sorunları
 ```bash
-# MariaDB durumunu kontrol et
+# Linux
 systemctl status mariadb
+mysql -u root -p
 
-# Veritabanına bağlan
-mysql -u mailuser -p mailserver
+# Windows
+sc query mysql
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p
+
+# Docker
+./docker.sh exec mysql -u root -p mailserver
+```
+
+### Docker Özel Sorunları
+```bash
+# Konteyner yeniden başlatma
+docker-compose restart
+
+# Logları görüntüleme
+docker-compose logs -f libtmail
+
+# Konteyner içinde komut çalıştırma
+docker-compose exec libtmail bash
+
+# Temiz başlatma
+docker-compose down -v
+docker-compose up -d
 ```
 
 ## 📈 Performans Optimizasyonu
