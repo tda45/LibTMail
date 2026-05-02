@@ -1,6 +1,3 @@
-# Copyright (c) 2026 tda_45
-# Bu proje TLİ (Türk Lisans İmzası) v1.0 ile lisanslanmıştır.
-# Detaylar için LICENSE dosyasına bakınız.
 
 #!/bin/bash
 
